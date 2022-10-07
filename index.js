@@ -275,9 +275,8 @@ function removeArtist(array, index){
   return array;
 }
 
-console.log(removeArtist(artists, 2)) 
+//console.log(removeArtist(artists, 2)) 
 
-!!!
 
 
 
@@ -301,17 +300,13 @@ Use addArtist to do the following:
 function addArtist(array, name1, years1, genre1, nationality1, bio1) {
   let customArtist = [...array];
   let NewObject = {'name': name1, 'years': years1, "genre": genre1, "nationality": nationality1, "bio": bio1}
-  for (let i = 0; i < array.length; i++){
-    customArtist.push(array[i]);
-  }
-
   customArtist.push(NewObject);
 
   return customArtist;
  
 }
 
-!!!
+//console.log(addArtist(artists, 'Logan', 2001, 'Web Design', 'American', 'Task 6'))
 
 
 
@@ -333,7 +328,7 @@ function lotsOfArt(array){
   return hundredPlus
 }
 
-lotsOfArt(artists)
+//console.log(lotsOfArt(artists))
 
 
 
@@ -347,11 +342,17 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(array, name,){
+function artistInfo(array, artistName,){
 
-  
-}
+ for(let i = 0; i < array.length; i++){
+  if(array[i]['name'] === artistName){
+    return array[i]['bio'];
+  }
+  }
+ }
 
+
+ //console.log(artistInfo(artists, 'Frida Kahlo'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -364,11 +365,19 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(array, nationality){
-  /*Your Code Here*/
+function artistByCountry(array, nationality1){
+
+  let artistByNationality = [];
+
+  for(let i = 0; i < array.length; i++){
+    if(array[i]['nationality'] === nationality1){
+      artistByNationality.push(array[i]['name'])
+    }
+  }
+    return artistByNationality
 }
 
-
+//console.log(artistByCountry(artists, 'Spanish'))
 
 /* ***** END OF TASKS ***** */
 
